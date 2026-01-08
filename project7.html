@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>catch the cookie</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial;
+                background: aqua;
+            }
+            button{
+                background: yellow;
+                color:white;
+                font-size: 20px;
+                padding:12px 25px;
+                border: none;
+                border-radius: 25px;
+                position: absolute;
+                transition: 0.2s;
+                cursor: pointer;
+
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn" onmouseover="move()"> 🍪catch me </button>
+        <script>
+            function move(){
+                btn.style.left=Math.random()*80+"vw";
+                btn.style.top=Math.random()*80+"vh";
+            }
+
+        </script>
+    </body>
+</html>

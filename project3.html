@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>welcome</title>
+        <style>
+            body{
+                font-family: Arial; text-align: center; background-color: white; margin-top: 80px;
+            }
+            h1{
+                font-size: 50px;
+                color: black;
+            }
+            button{
+                padding: 10px 20px; margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="count"> 0</h1>    
+        <button onclick="startcounter()">start</button> 
+        <button onclick="stopcounter()">stop</button> 
+        <button onclick="reset()">Reset</button> 
+
+        <script>
+            let count=0;
+            let timer=null;
+            function startcounter(){
+                if (timer===null){
+                    timer=setInterval(()=>{
+                        count++;
+                document.getElementById("count").innerText=count;
+                    },1000);
+                }    
+            }
+            function stopcounter(){
+                clearInterval(timer);
+                timer=null;
+            }
+            function reset(){
+                stopcounter();
+                count=0;
+                document.getElementById("count").innerText = count; 
+            }
+            
+             
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>welcome</title>
+        <style>
+            body{
+                font-family: Arial; text-align: center; background-color: white; margin-top: 80px;
+            }
+            h1{
+                font-size: 50px;
+                color: black;
+            }
+            button{
+                padding: 10px 20px; margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 > click to change  </h1>    
+        <button onclick="changecolor()">change color</button> 
+         
+
+        <script>
+            
+            function changecolor(){
+                const randomcolor="#"+Math.floor(Math.random()*16777215).toString(16);
+                document.body.style.backgroundColor=randomcolor;
+            }
+            
+            
+             
+
+        </script>
+    </body>
+</html>

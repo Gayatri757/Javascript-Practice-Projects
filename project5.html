@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Emoji Rating</title>
+
+<style>
+    body{
+        text-align:center;
+        font-family:Arial;
+        margin-top:60px;
+    }
+    span{
+        font-size:45px;
+        cursor:pointer;
+        padding:8px;
+        transition:0.2s;
+    }
+    .active{
+        transform:scale(1.2);
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Rate Your Experience</h2>
+<p id="msg"></p>
+
+<div id="emojiBox">
+    <span onclick="rate(this)">😡</span>
+    <span onclick="rate(this)">☹️</span>
+    <span onclick="rate(this)">😐</span>
+    <span onclick="rate(this)">😊</span>
+    <span onclick="rate(this)">🤩</span>
+</div>
+
+<script>
+
+function rate(el){
+    // Remove active class from all
+    let all = document.querySelectorAll("#emojiBox span");
+    all.forEach(e => e.classList.remove("active"));
+
+    // Add active to clicked emoji
+    el.classList.add("active");
+
+    // Show message based on emoji
+    let msg = document.getElementById("msg");
+
+    if(el.innerText === "😡") msg.innerText = "Very Bad!";
+    else if(el.innerText === "☹️") msg.innerText = "Bad!";
+    else if(el.innerText === "😐") msg.innerText = "Okay!";
+    else if(el.innerText === "😊") msg.innerText = "Good!";
+    else if(el.innerText === "🤩") msg.innerText = "Excellent!";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>memory match</title>
+        <style>
+            body{
+                text-align: center;
+                font-family: Arial;
+                background: white;
+                padding-top: 30px;
+
+            }
+            .card{
+                width:80px;
+                height:80px;
+                background: #4a6cf7;
+                color: white;
+                font-size: 30px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin: 8px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="status"> find the match</h2>
+        <div id="game"></div>
+        <script>
+            let items=["🐱","🐶","🐱","🐶"];
+            items.sort(()=>Math.random()-0.5);
+            let first=null;
+            items.forEach(i=>{
+                let c=document.createElement("div");
+                c.className="card";
+                c.dataset.value=i;
+                c.onclick=()=>reveal(c);
+                c.innerText="?";
+                game.appendChild(c);
+            });
+            function reveal(c){
+                c.innerText=c.dataset.value;
+                if(!first){ first=c;}
+                else{
+                    if(first.dataset.value ===c.dataset.value && first!== c){
+                        first.style.background="green";
+                        c.style.background="Matched!";
+                    }
+                    else{
+                        let a=first,b=c;
+                        setTimeout(()=> { a.innerText="?";b.innerText="?"},600);
+                        status.innerText="Try Again";
+                    }
+                    first=null;
+                }
+            }
+        </script>
+    </body>
+</html>

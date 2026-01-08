@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>welcome</title>
+        <style>
+            body{
+                font-family: Arial; text-align: center; background-color: white; margin-top: 80px;
+            }
+            h1{
+                font-size: 50px;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="clock"> 00:00:00 </h1>       
+        <script>
+            function showTime(){
+                let time=new Date().toLocaleTimeString();
+                document.getElementById("clock").innerText=time;
+            }
+            setInterval(showTime,1000);
+             
+
+        </script>
+    </body>
+</html>
